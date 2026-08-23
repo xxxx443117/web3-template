@@ -1,0 +1,11 @@
+{
+  "printWidth": 130,
+  "overrides": [
+    {
+      "files": ["src/contract/contracts.ts", "src/contract/tokens.ts"],
+      "options": {
+        "printWidth": 280
+      }
+    }
+  ]
+}

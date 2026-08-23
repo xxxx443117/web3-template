@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+:root {
+  --color-base-content: black;
+  --top-bar-height: 44px;
+  --color-primary-first: #e8ba41;
+  --color-primary-second: #beff5c;
+
+  --color-secondary-first: #0052ff;
+  --color-secondary-second: #00c48c;
+
+  --color-success: #19c63c;
+  --color-error: #ec4f4f;
+
+  /* 主色 */
+  --color-primary-100: #d5651b;
+  /* --color-primary-100: linear-gradient(90deg, color-mix(in oklab, var(--color-primary-first) 100%, transparent) 0%, color-mix(in oklab, var(--color-primary-second) 100%, transparent) 100%); */
+
+  --color-primary-50: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--color-primary-first) 50%, transparent) 0%,
+    color-mix(in oklab, var(--color-primary-second) 50%, transparent) 100%
+  );
+
+  --color-primary-30: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--color-primary-first) 30%, transparent) 0%,
+    color-mix(in oklab, var(--color-primary-second) 30%, transparent) 100%
+  );
+
+  /* 辅助色 */
+  --color-secondary-100: linear-gradient(99.47deg, #fff472 0%, #78e2a0 113.32%);
+
+  --color-primary: var(--color-primary-100);
+  --color-secondary: var(--color-secondary-100);
+  --bg-color: linear-gradient(147.74deg, #202020 -9.84%, #000000 97.2%);
+  /* --color-primary-gradient: linear-gradient(90deg, #E8BA41 0%, #BEFF5C 100%); */
+
+  /* 白天模式 */
+  --text-color: black;
+  --page-bg-color: #f8f8f8;
+  --shadow-theme: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+
+  /* 渐变紫色 */
+  --color-purple: linear-gradient(270deg, #e37fff 0%, #908ffe 100%);
+  --color-light-purple: linear-gradient(270deg, #0052ff 0%, #00c48c 100%);
+
+  /* 渐变黄色 */
+  --color-yellow: linear-gradient(270deg, #ba7743 0%, #d5a469 100%);
+}
+
+/* 暗黑模式 */
+.dark {
+  --text-color: white;
+  --page-bg-color: #06080f;
+  --shadow-theme: 0 0 8px 0px rgba(255, 255, 255, 0.3);
+
+  /* 暗黑模式下的渐变蓝色 */
+  /* --color-purple: linear-gradient(270deg, #e37fff 0%, #908ffe 100%); */
+
+  .dark-bg-blue {
+    background: var(--color-purple);
+  }
+
+  /* 渐变文字 */
+  .dark-text-blue {
+    background: var(--color-purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 渐变边框 */
+  .dark-border-blue {
+    position: relative;
+    --border-color: var(--color-purple);
+  }
+  .dark-border-blue::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+    border-radius: inherit;
+    background: var(--color-purple);
+    --mask-bg: linear-gradient(red, red);
+    -webkit-mask-image: var(--mask-bg), var(--mask-bg);
+    -webkit-mask-clip: content-box, padding-box;
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+  }
+  .bg-dark-card {
+    background: linear-gradient(180deg, #404040 0%, #252525 20%, #272727 40%, #292929 60%, #292929 80%, #191919 100%);
+  }
+}
+
+.bg-purple {
+  background: var(--color-purple);
+}
+
+.bg-yellow {
+  background: var(--color-yellow);
+}
+.dark-bg-blue {
+  background: var(--color-purple);
+}
+
+/* 渐变边框 */
+.dark-border-blue {
+  position: relative;
+  --border-color: var(--color-purple);
+}
+.dark-border-blue::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  border-radius: inherit;
+  background: var(--color-purple);
+  --mask-bg: linear-gradient(red, red);
+  -webkit-mask-image: var(--mask-bg), var(--mask-bg);
+  -webkit-mask-clip: content-box, padding-box;
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+/* 渐变文字 */
+.text-purple {
+  background: var(--color-purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.shadow {
+  box-shadow: var(--shadow-theme);
+}
+.body-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* background-color: ; */
+  /* background-image: var(--bg-color); */
+
+  /* background-image: none;
+  background: #f2f9ff; */
+}
+
+.border-gradient {
+  position: relative;
+  --color-primary-mix: 30%;
+  /* --border-radius: 10px; */
+  --border-width: 1px;
+  --border-color: var(--color-primary);
+  position: relative;
+  /* border-radius: var(--border-radius); */
+}
+.border-gradient::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  /* border-radius: var(--border-radius); */
+  border-radius: inherit;
+  background: var(--border-color);
+  /* 随便定义一个颜色 */
+  --mask-bg: linear-gradient(red, red);
+  /* 类似background-clip */
+  --mask-clip: content-box, padding-box;
+  /* mask允许使用者通过遮罩或者裁切特定区域的图片的方式来隐藏一个元素的部分或者全部可见区域 */
+  /* mask-image类似background-image 设置了用作元素蒙版层的图像，默认值为none，值为透明图片，或透明渐变 */
+  -webkit-mask-image: var(--mask-bg), var(--mask-bg);
+  /* 默认值为border-box，可选值与background-origin相同 */
+  -webkit-mask-clip: var(--mask-clip);
+  /* exclude排除，只显示不重合的地方,Firefox支持4个属性 */
+  mask-composite: exclude;
+  /* 只显示下方遮罩，重合的地方不显示 */
+  -webkit-mask-composite: destination-out;
+}
+.border-gradient-30 {
+  --border-color: var(--color-primary-30);
+}
+.border-gradient-50 {
+  --border-color: var(--color-primary-50);
+}
+.border-gradient-100 {
+  --border-color: var(--color-primary-100);
+}
+.border-secondary {
+  --border-color: var(--color-secondary);
+}
+.border-error {
+  --border-color: var(--color-error);
+}
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.loading {
+  pointer-events: none;
+  aspect-ratio: 1;
+  vertical-align: middle;
+  width: calc(var(--size-selector, 0.25rem) * 6);
+  background-color: currentColor;
+  display: inline-block;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' stroke='black' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform-origin='center'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke-width='3' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='2s' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-dasharray' values='0,150;42,150;42,150' keyTimes='0;0.475;1' dur='1.5s' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-dashoffset' values='0;-16;-59' keyTimes='0;0.475;1' dur='1.5s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' stroke='black' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform-origin='center'%3E%3Ccircle cx='12' cy='12' r='9.5' fill='none' stroke-width='3' stroke-linecap='round'%3E%3CanimateTransform attributeName='transform' type='rotate' from='0 12 12' to='360 12 12' dur='2s' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-dasharray' values='0,150;42,150;42,150' keyTimes='0;0.475;1' dur='1.5s' repeatCount='indefinite'/%3E%3Canimate attributeName='stroke-dashoffset' values='0;-16;-59' keyTimes='0;0.475;1' dur='1.5s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-position: 50%;
+  mask-position: 50%;
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+.loading-dots {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1'/%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1' begin='0.1s'/%3E%3C/circle%3E%3Ccircle cx='20' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1' begin='0.2s'/%3E%3C/circle%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1'/%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1' begin='0.1s'/%3E%3C/circle%3E%3Ccircle cx='20' cy='12' r='3'%3E%3Canimate attributeName='cy' values='12;6;12;12' keyTimes='0;0.286;0.571;1' dur='1.05s' repeatCount='indefinite' keySplines='.33,0,.66,.33;.33,.66,.66,1' begin='0.2s'/%3E%3C/circle%3E%3C/svg%3E");
+}
+.loading-xs {
+  width: calc(var(--size-selector, 0.25rem) * 3);
+}
+.loading-sm {
+  width: calc(var(--size-selector, 0.25rem) * 5);
+}
+.loading-md {
+  width: calc(var(--size-selector, 0.25rem) * 7);
+}
+.loading-lg {
+  width: calc(var(--size-selector, 0.25rem) * 9);
+}
+.loading-xl {
+  width: calc(var(--size-selector, 0.25rem) * 9);
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 36px;
+  font-weight: bold;
+  color: #1b1b1b;
+  /* background: linear-gradient(90deg, #e1ff00, #4fff6a); */
+  /* border-radius: 40px; */
+  z-index: 1;
+  font-family: "Noto Sans SC", sans-serif;
+  cursor: pointer;
+  text-align: center;
+  background-clip: padding-box;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border-radius: 40px;
+  padding: 2px; /* 控制边框宽度 */
+  background: linear-gradient(90deg, #e1ff00, #4fff6a);
+  z-index: -1;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 40px;
+  padding: 2px; /* 控制边框宽度 */
+  background: linear-gradient(90deg, #e1ff00, #4fff6a); /* 渐变边框 */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: transform 0.6s ease;
+
+  z-index: -1;
+}
+
+.btn.outline {
+  /* border-radius: currentColor; */
+  width: auto;
+  padding: 0;
+  color: #fff;
+  outline: none;
+  /* color: currentColor; */
+}
+.btn.outline::after {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: inherit;
+}
+.btn.outline::before {
+  border-radius: inherit;
+}
+.star {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  z-index: -1;
+  background: url("../images/common/page-bg-star.png") no-repeat center center;
+  background-size: contain;
+
+  animation: twinkle 2s infinite ease-in-out;
+}
+.star-move {
+  animation: float 100s linear infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+
+.visible-hidden {
+  visibility: hidden;
+}

@@ -1,0 +1,24 @@
+/* @import "tailwindcss"; */
+/* @import "tailwindcss" important; */
+@import "./tailwindcss.css";
+
+@import "./fonts.css";
+@import "./common.css";
+@import "./animation.css";
+@import "./vant.css";
+/* @import "./template.css"; */
+
+@theme {
+  --font-orbitron: Orbitron;
+  --font-poppins: Poppins;
+  --font-pingfang: PingFang;
+  --font-dinpro: DINPro;
+}
+
+@layer base {
+  html {
+    font-family: PingFang SC;
+    color: var(--text-color); /* 全局文字颜色 */
+    background-color: var(--page-bg-color); /* 全局背景颜色 */
+  }
+}

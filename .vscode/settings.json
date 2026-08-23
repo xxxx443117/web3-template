@@ -1,0 +1,88 @@
+{
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "eslint.options": {
+    "extensions": [".js", ".vue", ".ts", ".tsx"]
+  },
+  "eslint.validate": [
+    "vue",
+    "html",
+    "javascript",
+    "graphql",
+    "javascriptreact",
+    "json",
+    "typescript",
+    "typescriptreact",
+    "vue-html"
+  ],
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript",
+    "*.nvue": "vue"
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.formatOnType": true,
+  "javascript.format.enable": false,
+  "workbench.iconTheme": "vs-seti",
+  "backgroundCover.imagePath": "d:\\360downloads\\upload.jpg",
+  "search.followSymlinks": false,
+  "backgroundCover.opacity": 0.5,
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "markdownlint.config": {
+    "default": true,
+    "no-hard-tabs": false,
+    "no-inline-html": false,
+    "first-line-heading": false,
+    "heading-increment": false,
+    "no-bare-urls": false
+  },
+  "editor.minimap.enabled": false,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "explorer.confirmDelete": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.exclude": {
+    "**/*.meta": true
+  },
+  "chatgpt.lang": "cn",
+  "Codegeex.Privacy": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "git.openRepositoryInParentFolders": "never",
+  "Codegeex.SidebarUI.LanguagePreference": "中文",
+  "Codegeex.GenerationPreference": "line by line",
+  "Codegeex.License": "",
+  "editor.detectIndentation": false,
+  "vsicons.dontShowNewVersionMessage": true
+}
