@@ -1,7 +1,7 @@
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 import { defineConfig, loadEnv } from "vite";
-// import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from "@tailwindcss/vite";
 import { VantResolver } from "@vant/auto-import-resolver";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       vue(),
-      // tailwindcss(),
+      tailwindcss(),
       Components({
         dts: true,
         resolvers: [VantResolver()],
